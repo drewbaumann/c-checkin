@@ -1,0 +1,25 @@
+<p>
+  <b>Plan:</b>
+  <%=h @user.plan %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @user.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @user.address %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @user.phone %>
+</p>
+<%= image_tag @user.avatar.url %><br/>
+<!-- <%= image_tag @user.avatar.url(:medium) %>
+<%= image_tag @user.avatar.url(:thumb) %> -->
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

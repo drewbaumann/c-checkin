@@ -1,0 +1,29 @@
+<h1>Editing user</h1>
+
+<% form_for :user, @user, :url => user_path, :html => { :multipart => true, :method => :put } do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :plan %><br />
+    <%= f.text_field :plan %>
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <%= render :partial => "avatar_loader", :locals => {:f => f} %>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @user %> |
+<%= link_to 'Back', users_path %>
