@@ -1,0 +1,19 @@
+img {
+    vertical-align: middle;
+    height: 100%;
+}
+.thumb
+{
+height: 50px;    
+}
+.middle
+{
+height: 300px;    
+}
+#notice {
+    border: 2px solid green;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #f0f0f0;
+    font: bold smaller sans-serif;
+}

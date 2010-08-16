@@ -1,0 +1,29 @@
+<h1>Listing Members</h1>
+
+<table>
+  <tr>
+    <th>Plan</th>
+    <th>Name</th>
+    <th>Address</th>
+    <th>Phone</th>
+    <th>Avatar</th>
+  </tr>
+
+<% @members.each do |member| %>
+  <tr>
+    <td><%=h member.primary_plan_name %></td>
+    <td><%=h member.name %></td>
+    <td><%=h member.address %></td>
+    <td><%=h member.phone %></td>
+    
+    <td><%= image_tag member.avatar.url, {:class => 'thumb'}%></td>
+    <td><%= link_to 'Show', member %></td>
+    <td><%= link_to 'Edit', edit_member_path(member) %></td>
+    <td><%= link_to 'Destroy', member, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New member', new_member_path %>

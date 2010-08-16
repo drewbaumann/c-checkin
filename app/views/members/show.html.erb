@@ -1,0 +1,29 @@
+<p>
+  <b>Plan:</b>
+  <%=h @member.primary_plan_name %>
+</p>
+
+<p>
+  <b>Name:</b>
+  <%=h @member.name %>
+</p>
+
+<p>
+  <b>Address:</b>
+  <%=h @member.address %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%=h @member.phone %>
+</p>
+
+<p>
+  <b>Avatar:</b><br/>
+  <%= image_tag @member.avatar.url, {:class => 'middle'} %>
+</p>
+
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

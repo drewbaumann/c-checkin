@@ -1,0 +1,32 @@
+<h1>Editing Member</h1>
+
+<% form_for :member, @member, :url => member_path, :html => { :multipart => true, :method => :put } do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= plan_select_for @member%><br />
+  </p>
+  <p>
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :address %><br />
+    <%= f.text_field :address %>
+  </p>
+  <p>
+    <%= f.label :phone %><br />
+    <%= f.text_field :phone %>
+  </p>
+  <p>
+      <%= f.label :avatar %><br />
+      <%= image_tag @member.avatar.url, {:class => 'middle'} %><br/>
+      <%= render :partial => "avatar_loader", :locals => {:f => f} %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @member %> |
+<%= link_to 'Back', members_path %>
