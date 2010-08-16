@@ -1,5 +1,6 @@
 class AlterTableUsers < ActiveRecord::Migration
   def self.up
+    drop_table :users
     create_table :users do |t|
       t.string    :login,               :null => false                # optional, you can use email instead, or both
       t.string    :email,               :null => false                # optional, you can use login instead, or both
