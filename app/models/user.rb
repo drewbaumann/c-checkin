@@ -1,3 +1,6 @@
 class User < ActiveRecord::Base
-  has_attached_file :avatar#, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  acts_as_authentic do |c|
+    #c.my_config_option = my_value # for available options see documentation in: Authlogic::ActsAsAuthentic
+    #c.my_config_option =
+  end # block optional
 end

@@ -5,3 +5,11 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
+['Drop-in & Community Membership',
+  'Part-time Membership',
+  'Full-time Membership',
+  'Nights & Weekends Membership'].each do |name|
+    
+    Plan.create :name => name
+    puts "Creating #{name}"
+end

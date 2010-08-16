@@ -1,25 +1,38 @@
+<h1>Account Management</h1>
 <p>
-  <b>Plan:</b>
-  <%=h @user.plan %>
+  <b>Login:</b>
+  <%=h @user.login %>
 </p>
 
 <p>
-  <b>Name:</b>
-  <%=h @user.name %>
+  <b>Login count:</b>
+  <%=h @user.login_count %>
 </p>
 
 <p>
-  <b>Address:</b>
-  <%=h @user.address %>
+  <b>Last request at:</b>
+  <%=h @user.last_request_at %>
 </p>
 
 <p>
-  <b>Phone:</b>
-  <%=h @user.phone %>
+  <b>Last login at:</b>
+  <%=h @user.last_login_at %>
 </p>
-<%= image_tag @user.avatar.url %><br/>
-<!-- <%= image_tag @user.avatar.url(:medium) %>
-<%= image_tag @user.avatar.url(:thumb) %> -->
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+<p>
+  <b>Current login at:</b>
+  <%=h @user.current_login_at %>
+</p>
+
+<p>
+  <b>Last login ip:</b>
+  <%=h @user.last_login_ip %>
+</p>
+
+<p>
+  <b>Current login ip:</b>
+  <%=h @user.current_login_ip %>
+</p>
+
+
+<%= link_to 'Edit', edit_account_path %>
