@@ -1,9 +1,4 @@
 <p>
-  <b>Plan:</b>
-  <%=h @member.primary_plan_name %>
-</p>
-
-<p>
   <b>Name:</b>
   <%=h @member.name %>
 </p>
@@ -22,8 +17,15 @@
   <b>Avatar:</b><br/>
   <%= image_tag @member.avatar.url, {:class => 'middle'} %>
 </p>
+<p>
+  <b>Coloft ID:</b>
+  <%=h @member.coloft_id %>
+</p>
 
-
+<p>
+  <b>Plan:</b>
+  <%=h @member.primary_plan_name %>
+</p>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |
 <%= link_to 'Back', members_path %>

@@ -1,22 +1,22 @@
-<h1>Listing Members</h1>
+<h1>Coloft Members</h1>
 
 <table>
   <tr>
-    <th>Plan</th>
+    <th>Avatar</th>   
     <th>Name</th>
-    <th>Address</th>
-    <th>Phone</th>
-    <th>Avatar</th>
+    <th>Coloft ID</th>
+    <th>Plan</th>
+    <th>Visits</th>
   </tr>
 
 <% @members.each do |member| %>
   <tr>
-    <td><%=h member.primary_plan_name %></td>
-    <td><%=h member.name %></td>
-    <td><%=h member.address %></td>
-    <td><%=h member.phone %></td>
-    
     <td><%= image_tag member.avatar.url, {:class => 'thumb'}%></td>
+    <td><%=h member.name %></td>
+    <td><%=h member.coloft_id %></td>
+    <td><%=h member.primary_plan_name %></td>
+    <td><%=h member.visits.count %></td>
+    
     <td><%= link_to 'Show', member %></td>
     <td><%= link_to 'Edit', edit_member_path(member) %></td>
     <td><%= link_to 'Destroy', member, :confirm => 'Are you sure?', :method => :delete %></td>

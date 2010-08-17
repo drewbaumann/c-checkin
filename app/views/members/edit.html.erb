@@ -4,15 +4,12 @@
   <%= f.error_messages %>
 
   <p>
-    <%= plan_select_for @member%><br />
-  </p>
-  <p>
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </p>
   <p>
     <%= f.label :address %><br />
-    <%= f.text_field :address %>
+    <%= f.text_area :address, :size => '22x5' %>
   </p>
   <p>
     <%= f.label :phone %><br />
@@ -22,6 +19,13 @@
       <%= f.label :avatar %><br />
       <%= image_tag @member.avatar.url, {:class => 'middle'} %><br/>
       <%= render :partial => "avatar_loader", :locals => {:f => f} %>
+  </p>
+  <p>
+    <%= f.label :coloft_id, "Coloft ID" %><br />
+    <%= f.text_field :coloft_id %>
+  </p>
+  <p>
+    <%= plan_select_for @member%><br />
   </p>
   <p>
     <%= f.submit 'Update' %>
