@@ -1,4 +1,4 @@
-<h1>Editing Member</h1>
+<h1>Editing <%=h @member.name %></h1>
 
 <% form_for :member, @member, :url => member_path, :html => { :multipart => true, :method => :put } do |f| %>
   <%= f.error_messages %>

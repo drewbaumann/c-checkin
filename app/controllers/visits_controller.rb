@@ -1,7 +1,20 @@
 class VisitsController < ApplicationController
   
-  def index
-    @visits = Visit.all
+  def new
+    @visit = Visit.new
   end
+
+  def create
+    
+    if @member = Member.find_by_coloft_id(params[:coloft_id])
+      @member.visits.create
+      flash[:notice] = "Colofter Checked In"
+      redirect_back_or_default new_checkin_url
+    else
+      flash[:notice] = "Colofter Not Found"
+      redirect_back_or_default new_checkin_url
+    end
+  end
+  
   
 end

@@ -85,6 +85,22 @@ class MembersController < ApplicationController
       format.xml  { head :ok }
     end
   end
+  
+  def update
+    @member = Member.find(params[:id])
+
+    respond_to do |format|
+      if @member.update_attributes(params[:member])
+        
+        add_plan_to_user_if_specified!
+        format.html { redirect_to(@member, :notice => 'Member was successfully updated.') }
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @member.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
 
 private
 
