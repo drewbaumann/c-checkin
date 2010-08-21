@@ -15,7 +15,7 @@
     <td><%=h member.name %></td>
     <td><%=h member.coloft_id %></td>
     <td><%=h member.primary_plan_name %></td>
-    <td><%=h member.visits.count %></td>
+    <td><%=h member.visits.this_month.count %></td>
     
     <td><%= link_to 'Show', member %></td>
     <td><%= link_to 'Edit', edit_member_path(member) %></td>

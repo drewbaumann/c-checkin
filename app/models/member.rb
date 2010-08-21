@@ -10,6 +10,7 @@ class Member < ActiveRecord::Base
       first
     end
   end
+
   def primary_plan_name
     plans.primary.name
   rescue
