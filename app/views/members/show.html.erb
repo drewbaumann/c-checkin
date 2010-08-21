@@ -1,3 +1,4 @@
+<h1><%=h @member.name %></h1>
 <p>
   <b>Name:</b>
   <%=h @member.name %>
@@ -18,13 +19,26 @@
   <%= image_tag @member.avatar.url, {:class => 'middle'} %>
 </p>
 <p>
+  <b>Plan:</b>
+  <%=h @member.primary_plan_name %>
+</p>
+<p>
   <b>Coloft ID:</b>
   <%=h @member.coloft_id %>
 </p>
-
 <p>
-  <b>Plan:</b>
-  <%=h @member.primary_plan_name %>
+  <b>Visits This Month:</b>
+  <%=h @member.visits.this_month.count %>
+</p>
+<p>
+  <b>Total Visits:</b>
+  <%=h @member.visits.count %>
+</p>
+<p>
+<b>Visit History</b>
+<% @member.visits.each do |visit| %>
+    <p><%=h visit.created_at.localtime %></p>
+<% end %>
 </p>
 
 <%= link_to 'Edit', edit_member_path(@member) %> |

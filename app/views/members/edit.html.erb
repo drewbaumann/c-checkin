@@ -21,12 +21,13 @@
       <%= render :partial => "avatar_loader", :locals => {:f => f} %>
   </p>
   <p>
+    <%= plan_select_for @member%><br />
+  </p>
+  <p>
     <%= f.label :coloft_id, "Coloft ID" %><br />
     <%= f.text_field :coloft_id %>
   </p>
-  <p>
-    <%= plan_select_for @member%><br />
-  </p>
+
   <p>
     <%= f.submit 'Update' %>
   </p>

@@ -2,7 +2,14 @@
   <b>Name:</b>
   <%=h @plan.name %>
 </p>
-
+<p>
+  <b>Days:</b>
+  <%=h @plan.days %>
+</p>
+<p>
+  <b>Price:</b>
+  <%=h number_to_currency(@plan.price) %>
+</p>
 
 
 

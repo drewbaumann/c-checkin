@@ -3,12 +3,16 @@
 <table>
   <tr>
     <th>Name</th>
+    <th>Days</th>
+    <th>Price</th>
 
   </tr>
 
 <% @plans.each do |plan| %>
   <tr>
     <td><%=h plan.name %></td>
+    <td><%=h plan.days %></td>
+    <td><%=h number_to_currency(plan.price) %></td>
 
     <td><%= link_to 'Show', plan %></td>
     <td><%= link_to 'Edit', edit_plan_path(plan) %></td>
