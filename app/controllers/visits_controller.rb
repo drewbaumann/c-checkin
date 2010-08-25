@@ -7,7 +7,7 @@ class VisitsController < ApplicationController
   def create
     
     if @member = Member.find_by_coloft_id(params[:coloft_id])
-      @member.visits.create
+      @member.visits.create :coloft_id => params[:coloft_id]
       flash[:notice] = "Colofter Checked In"
       redirect_back_or_default new_visit_url
     else
