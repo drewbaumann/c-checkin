@@ -18,6 +18,7 @@
 <% elsif current_user.admin %>
   <%= link_to 'Home', members_path %>|
   <%= link_to 'My Account', account_path %>|
+  <%= link_to 'Manage Accounts', users_path %>|
   <%= link_to 'Check In', new_visit_path %>|
   <%= link_to 'Plans', plans_path %>|
   <%= link_to 'Log Out', user_session_path, :method => :delete %>

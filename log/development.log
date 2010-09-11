@@ -13987,3 +13987,368 @@ Rendering template within layouts/application
 Rendering users/show
 Completed in 78ms (View: 55, DB: 1) | 200 OK [http://localhost/account]
   [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+
+
+Processing UserSessionsController#destroy (for 127.0.0.1 at 2010-09-11 16:25:17) [DELETE]
+  Parameters: {"action"=>"destroy", "_method"=>"delete", "authenticity_token"=>"ZtQMl7F4FDXtZ48bYeWeXSQfDkaUtP28VcCX0JdNL3k=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '3') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-11 23:25:17', "perishable_token" = 't8NcGhLlQdJOxvl91jW', "last_request_at" = '2010-09-11 23:25:17' WHERE "id" = 3[0m
+Redirected to http://localhost:3000/
+Completed in 108ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-11 16:25:18) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+Completed in 61ms (View: 31, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UserSessionsController#create (for 127.0.0.1 at 2010-09-11 16:26:28) [POST]
+  Parameters: {"commit"=>"Login", "user_session"=>{"remember_me"=>"0", "password"=>"[FILTERED]", "login"=>"avesta"}, "action"=>"create", "authenticity_token"=>"ZtQMl7F4FDXtZ48bYeWeXSQfDkaUtP28VcCX0JdNL3k=", "controller"=>"user_sessions"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE (LOWER("users".login) = 'avesta') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "login_count" = 27, "updated_at" = '2010-09-11 23:26:28', "perishable_token" = '5lR7deNSygMEad2rB', "last_request_at" = '2010-09-11 23:26:28', "last_login_at" = '2010-09-11 22:24:20', "current_login_at" = '2010-09-11 23:26:28' WHERE "id" = 1[0m
+Redirected to http://localhost:3000/members
+Completed in 24ms (DB: 1) | 302 Found [http://localhost/user_session]
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-09-11 16:26:28) [GET]
+  Parameters: {"action"=>"index", "controller"=>"members"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-11 23:26:28', "perishable_token" = '3RfvoC0JHTIQM2Jcjn', "last_request_at" = '2010-09-11 23:26:28' WHERE "id" = 1[0m
+  [4;35;1mMember Load (0.7ms)[0m   [0mSELECT * FROM "members" [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 1)) LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 1)) AND ("visits".member_id = 1)) [0m
+  [4;36;1mPlan Load (0.4ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 5)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 5)) AND ("visits".member_id = 5)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 14)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 14)) AND ("visits".member_id = 14)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 15)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 15)) AND ("visits".member_id = 15)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 16)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 16)) AND ("visits".member_id = 16)) [0m
+  [4;36;1mPlan Load (0.2ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 17)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 17)) AND ("visits".member_id = 17)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 18)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 18)) AND ("visits".member_id = 18)) [0m
+  [4;36;1mPlan Load (0.2ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 19)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 19)) AND ("visits".member_id = 19)) [0m
+Completed in 635ms (View: 496, DB: 6) | 200 OK [http://localhost/members]
+
+
+Processing UsersController#show (for 127.0.0.1 at 2010-09-11 16:26:35) [GET]
+  Parameters: {"action"=>"show", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-11 23:26:35', "perishable_token" = 'nepyGtQo6CmiPG63ZH8F', "last_request_at" = '2010-09-11 23:26:35' WHERE "id" = 1[0m
+Rendering template within layouts/application
+Rendering users/show
+Completed in 71ms (View: 50, DB: 1) | 200 OK [http://localhost/account]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-11 16:26:41) [GET]
+
+ActionController::RoutingError (No route matches "/accounts" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:26:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-11 23:26:45', "perishable_token" = 'LwFxGKTF11GZstVoerkC', "last_request_at" = '2010-09-11 23:26:45' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+
+ActionView::MissingTemplate (Missing template users/index.erb in view path app/views):
+  app/controllers/users_controller.rb:41:in `index'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-11 16:32:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"accounts"}
+
+NameError (uninitialized constant AccountsController):
+  
+
+Rendered rescues/_trace (110.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-09-11 16:33:13) [GET]
+
+ActionController::RoutingError (No route matches "/accounts" with {:method=>:get}):
+  
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:33:33) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-11 23:33:33', "perishable_token" = 'rc61LORcPwhF2INgX6dc', "last_request_at" = '2010-09-11 23:33:33' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `avatar' for #<User:0x103135228>) on line #11 of app/views/users/index.html.erb:
+8: 
+9: <% @users.each do |user| %>
+10:   <tr>
+11:     <td><%= image_tag user.avatar.url, {:class => 'thumb'}%></td>
+12:     <td><%=h user.name %></td>
+13:     <td><%=h user.coloft_id %></td>
+14:     
+
+    app/views/users/index.html.erb:11
+    app/views/users/index.html.erb:9:in `each'
+    app/views/users/index.html.erb:9
+    app/controllers/users_controller.rb:41:in `index'
+
+Rendered rescues/_trace (142.3ms)
+Rendered rescues/_request_and_response (0.6ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:34:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-11 23:34:16', "perishable_token" = 'Qa3uLPrfJhLz2fw4QLBH', "last_request_at" = '2010-09-11 23:34:16' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `avatar' for #<User:0x103221510>) on line #11 of app/views/users/index.html.erb:
+8: 
+9: <% @users.each do |user| %>
+10:   <tr>
+11:     <td><%= image_tag user.avatar.url, {:class => 'thumb'}%></td>
+12:     <td><%=h user.name %></td>
+13:     <td><%=h user.coloft_id %></td>
+14:     
+
+    app/views/users/index.html.erb:11
+    app/views/users/index.html.erb:9:in `each'
+    app/views/users/index.html.erb:9
+    app/controllers/users_controller.rb:41:in `index'
+
+Rendered rescues/_trace (177.8ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:34:18) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-11 23:34:18', "perishable_token" = 'RgGbqRuXyejtk6IkX6F8', "last_request_at" = '2010-09-11 23:34:18' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `avatar' for #<User:0x103310930>) on line #11 of app/views/users/index.html.erb:
+8: 
+9: <% @users.each do |user| %>
+10:   <tr>
+11:     <td><%= image_tag user.avatar.url, {:class => 'thumb'}%></td>
+12:     <td><%=h user.name %></td>
+13:     <td><%=h user.coloft_id %></td>
+14:     
+
+    app/views/users/index.html.erb:11
+    app/views/users/index.html.erb:9:in `each'
+    app/views/users/index.html.erb:9
+    app/controllers/users_controller.rb:41:in `index'
+
+Rendered rescues/_trace (143.3ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:34:34) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-11 23:34:34', "perishable_token" = 'fcpkhLaCDIecJ8UbSSj', "last_request_at" = '2010-09-11 23:34:34' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.6ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined method `name' for #<User:0x103584b30>) on line #11 of app/views/users/index.html.erb:
+8: 
+9: <% @users.each do |user| %>
+10:   <tr>
+11:     <td><%=h user.name %></td>
+12:     <td><%=h user.coloft_id %></td>
+13:     
+14:     <td><%= link_to 'Show', user %></td>
+
+    app/views/users/index.html.erb:11
+    app/views/users/index.html.erb:9:in `each'
+    app/views/users/index.html.erb:9
+    app/controllers/users_controller.rb:41:in `index'
+
+Rendered rescues/_trace (79.2ms)
+Rendered rescues/_request_and_response (1.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:34:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-11 23:34:52', "perishable_token" = 'BCd8SUk8CuYZdP8B5vd', "last_request_at" = '2010-09-11 23:34:52' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined local variable or method `accounts_path' for #<ActionView::Base:0x1037ac4d0>) on line #21 of app/views/layouts/application.html.erb:
+18: <% elsif current_user.admin %>
+19:   <%= link_to 'Home', members_path %>|
+20:   <%= link_to 'My Account', account_path %>|
+21:   <%= link_to 'Manage Accounts', accounts_path %>|
+22:   <%= link_to 'Check In', new_visit_path %>|
+23:   <%= link_to 'Plans', plans_path %>|
+24:   <%= link_to 'Log Out', user_session_path, :method => :delete %>
+
+    app/views/layouts/application.html.erb:21
+    app/controllers/users_controller.rb:41:in `index'
+
+Rendered rescues/_trace (47.2ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:35:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-11 23:35:04', "perishable_token" = 'QmlSIpNleyxCD3K7gImH', "last_request_at" = '2010-09-11 23:35:04' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined local variable or method `accounts_path' for #<ActionView::Base:0x1030b8188>) on line #21 of app/views/layouts/application.html.erb:
+18: <% elsif current_user.admin %>
+19:   <%= link_to 'Home', members_path %>|
+20:   <%= link_to 'My Account', account_path %>|
+21:   <%= link_to 'Manage Accounts', accounts_path %>|
+22:   <%= link_to 'Check In', new_visit_path %>|
+23:   <%= link_to 'Plans', plans_path %>|
+24:   <%= link_to 'Log Out', user_session_path, :method => :delete %>
+
+    app/views/layouts/application.html.erb:21
+    app/controllers/users_controller.rb:41:in `index'
+
+Rendered rescues/_trace (42.9ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:35:08) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-11 23:35:08', "perishable_token" = '1o1X1EnmBGREoGhlLE9f', "last_request_at" = '2010-09-11 23:35:08' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined local variable or method `accounts_path' for #<ActionView::Base:0x1030ff128>) on line #21 of app/views/layouts/application.html.erb:
+18: <% elsif current_user.admin %>
+19:   <%= link_to 'Home', members_path %>|
+20:   <%= link_to 'My Account', account_path %>|
+21:   <%= link_to 'Manage Accounts', accounts_path %>|
+22:   <%= link_to 'Check In', new_visit_path %>|
+23:   <%= link_to 'Plans', plans_path %>|
+24:   <%= link_to 'Log Out', user_session_path, :method => :delete %>
+
+    app/views/layouts/application.html.erb:21
+    app/controllers/users_controller.rb:41:in `index'
+
+Rendered rescues/_trace (63.0ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:35:25) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-11 23:35:25', "perishable_token" = 'YTDuuBuikHUDUnAhW6m', "last_request_at" = '2010-09-11 23:35:25' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined local variable or method `accounts_path' for #<ActionView::Base:0x1031240b8>) on line #21 of app/views/layouts/application.html.erb:
+18: <% elsif current_user.admin %>
+19:   <%= link_to 'Home', members_path %>|
+20:   <%= link_to 'My Account', account_path %>|
+21:   <%= link_to 'Manage Accounts', accounts_path %>|
+22:   <%= link_to 'Check In', new_visit_path %>|
+23:   <%= link_to 'Plans', plans_path %>|
+24:   <%= link_to 'Log Out', user_session_path, :method => :delete %>
+
+    app/views/layouts/application.html.erb:21
+    app/controllers/users_controller.rb:41:in `index'
+
+Rendered rescues/_trace (44.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:36:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-11 23:36:11', "perishable_token" = 'HIZMsSPtXPCDEwnzSCU', "last_request_at" = '2010-09-11 23:36:11' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.7ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined local variable or method `accounts_path' for #<ActionView::Base:0x10314f010>) on line #21 of app/views/layouts/application.html.erb:
+18: <% elsif current_user.admin %>
+19:   <%= link_to 'Home', members_path %>|
+20:   <%= link_to 'My Account', account_path %>|
+21:   <%= link_to 'Manage Accounts', accounts_path %>|
+22:   <%= link_to 'Check In', new_visit_path %>|
+23:   <%= link_to 'Plans', plans_path %>|
+24:   <%= link_to 'Log Out', user_session_path, :method => :delete %>
+
+    app/views/layouts/application.html.erb:21
+    app/controllers/users_controller.rb:41:in `index'
+
+Rendered rescues/_trace (44.5ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:36:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-11 23:36:16', "perishable_token" = '0CY3AR3hOx0wMdscyPvs', "last_request_at" = '2010-09-11 23:36:16' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+
+ActionView::TemplateError (undefined local variable or method `accounts_path' for #<ActionView::Base:0x103168470>) on line #21 of app/views/layouts/application.html.erb:
+18: <% elsif current_user.admin %>
+19:   <%= link_to 'Home', members_path %>|
+20:   <%= link_to 'My Account', account_path %>|
+21:   <%= link_to 'Manage Accounts', accounts_path %>|
+22:   <%= link_to 'Check In', new_visit_path %>|
+23:   <%= link_to 'Plans', plans_path %>|
+24:   <%= link_to 'Log Out', user_session_path, :method => :delete %>
+
+    app/views/layouts/application.html.erb:21
+    app/controllers/users_controller.rb:41:in `index'
+
+Rendered rescues/_trace (60.7ms)
+Rendered rescues/_request_and_response (0.3ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 16:36:39) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-11 23:36:39', "perishable_token" = 'QSoXRcQgJ85iJX8Ag4KM', "last_request_at" = '2010-09-11 23:36:39' WHERE "id" = 1[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 93ms (View: 69, DB: 1) | 200 OK [http://localhost/users]
