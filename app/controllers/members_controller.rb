@@ -2,6 +2,8 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.xml
   before_filter :require_user#, :only => :not_allowed
+  before_filter :require_admin
+  
   def index
     @members = Member.all
 

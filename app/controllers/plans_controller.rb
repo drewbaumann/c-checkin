@@ -2,6 +2,8 @@ class PlansController < ApplicationController
   # GET /plans
   # GET /plans.xml
   before_filter :require_user#, :only => :not_allowed
+  before_filter :require_admin
+  
   def index
     @plans = Plan.all
 

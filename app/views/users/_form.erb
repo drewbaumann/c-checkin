@@ -9,3 +9,6 @@
 <br />
 <%= form.label :password_confirmation %><br />
 <%= form.password_field :password_confirmation %><br />
+<br />
+<%= form.label :admin %><br />
+<%= form.select(:admin,{"No"=>'0',"Yes"=>'1'}) %><br />
