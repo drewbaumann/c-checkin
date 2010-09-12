@@ -1,6 +1,6 @@
 class MembersController < ApplicationController
   # GET /members
-  # GET /members.xml
+  # GET /members.json
   before_filter :require_user#, :only => :not_allowed
   before_filter :require_admin
   
@@ -9,29 +9,29 @@ class MembersController < ApplicationController
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @members }
+      format.json  { render :json => @members }
     end
   end
 
   # GET /members/1
-  # GET /members/1.xml
+  # GET /members/1.json
   def show
     @member = Member.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
-      format.xml  { render :xml => @member }
+      format.json  { render :json => @member }
     end
   end
 
   # GET /members/new
-  # GET /members/new.xml
+  # GET /members/new.json
   def new
     @member = Member.new
     
     respond_to do |format|
       format.html # new.html.erb
-      format.xml  { render :xml => @member }
+      format.json  { render :json => @member }
     end
   end
 
@@ -41,7 +41,7 @@ class MembersController < ApplicationController
   end
 
   # POST /members
-  # POST /members.xml
+  # POST /members.json
   def create
     @member = Member.new(params[:member])
 
@@ -50,16 +50,16 @@ class MembersController < ApplicationController
         add_plan_to_user_if_specified!
         
         format.html { redirect_to(@member, :notice => 'Member was successfully created.') }
-        format.xml  { render :xml => @member, :status => :created, :location => @member }
+        format.json  { render :json => @member, :status => :created, :location => @member }
       else
         format.html { render :action => "new" }
-        format.xml  { render :xml => @member.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @member.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # PUT /members/1
-  # PUT /members/1.xml
+  # PUT /members/1.json
   def update
     @member = Member.find(params[:id])
 
@@ -68,41 +68,26 @@ class MembersController < ApplicationController
         
         add_plan_to_user_if_specified!
         format.html { redirect_to(@member, :notice => 'Member was successfully updated.') }
-        format.xml  { head :ok }
+        format.json  { head :ok }
       else
         format.html { render :action => "edit" }
-        format.xml  { render :xml => @member.errors, :status => :unprocessable_entity }
+        format.json  { render :json => @member.errors, :status => :unprocessable_entity }
       end
     end
   end
 
   # DELETE /members/1
-  # DELETE /members/1.xml
+  # DELETE /members/1.json
   def destroy
     @member = Member.find(params[:id])
     @member.destroy
 
     respond_to do |format|
       format.html { redirect_to(members_url) }
-      format.xml  { head :ok }
+      format.json  { head :ok }
     end
   end
-  
-  def update
-    @member = Member.find(params[:id])
 
-    respond_to do |format|
-      if @member.update_attributes(params[:member])
-        
-        add_plan_to_user_if_specified!
-        format.html { redirect_to(@member, :notice => 'Member was successfully updated.') }
-        format.xml  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.xml  { render :xml => @member.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
 
 private
 
