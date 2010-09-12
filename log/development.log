@@ -14971,3 +14971,160 @@ Processing UsersController#index (for 127.0.0.1 at 2010-09-11 17:25:28) [GET]
 Rendering template within layouts/application
 Rendering users/index
 Completed in 71ms (View: 25, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing PlansController#index (for 127.0.0.1 at 2010-09-11 17:44:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-12 00:44:51', "perishable_token" = 'AvZLuzvYT2mwa1UZXIE', "last_request_at" = '2010-09-12 00:44:51' WHERE "id" = 1[0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT * FROM "plans" [0m
+Rendering template within layouts/application
+Rendering plans/index
+Completed in 662ms (View: 162, DB: 1) | 200 OK [http://localhost/plans]
+
+
+Processing PlansController#edit (for 127.0.0.1 at 2010-09-11 17:45:04) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"plans"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (70.2ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-12 00:45:04', "perishable_token" = 'jcMAk364pPfMkEFnQv', "last_request_at" = '2010-09-12 00:45:04' WHERE "id" = 1[0m
+  [4;36;1mPlan Load (0.2ms)[0m   [0;1mSELECT * FROM "plans" WHERE ("plans"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering plans/edit
+Completed in 232ms (View: 37, DB: 71) | 200 OK [http://localhost/plans/1/edit]
+
+
+Processing PlansController#index (for 127.0.0.1 at 2010-09-11 17:45:16) [GET]
+  Parameters: {"action"=>"index", "controller"=>"plans"}
+  [4;35;1mUser Load (0.4ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.3ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-12 00:45:16', "perishable_token" = '6XrhWmLaMheUR5hEat', "last_request_at" = '2010-09-12 00:45:16' WHERE "id" = 1[0m
+  [4;35;1mPlan Load (0.4ms)[0m   [0mSELECT * FROM "plans" [0m
+Rendering template within layouts/application
+Rendering plans/index
+Completed in 171ms (View: 58, DB: 1) | 200 OK [http://localhost/plans]
+
+
+Processing UsersController#index (for 127.0.0.1 at 2010-09-11 17:46:02) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (0.4ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-12 00:46:02', "perishable_token" = 'SS2uR6HqXHxyXEj1Oq4e', "last_request_at" = '2010-09-12 00:46:02' WHERE "id" = 1[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM "users" [0m
+Rendering template within layouts/application
+Rendering users/index
+Completed in 62ms (View: 40, DB: 1) | 200 OK [http://localhost/users]
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-09-11 17:46:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"members"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.6ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-12 00:46:04', "perishable_token" = 'aDuqCYLZY3MsddAfdde', "last_request_at" = '2010-09-12 00:46:04' WHERE "id" = 1[0m
+  [4;35;1mMember Load (0.5ms)[0m   [0mSELECT * FROM "members" [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mPlan Load (0.4ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 1)) LIMIT 1[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 1)) AND ("visits".member_id = 1)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 5)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 5)) AND ("visits".member_id = 5)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 14)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 14)) AND ("visits".member_id = 14)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 15)) LIMIT 1[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 15)) AND ("visits".member_id = 15)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 16)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 16)) AND ("visits".member_id = 16)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 17)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 17)) AND ("visits".member_id = 17)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 18)) LIMIT 1[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 18)) AND ("visits".member_id = 18)) [0m
+  [4;36;1mPlan Load (0.2ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 19)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 19)) AND ("visits".member_id = 19)) [0m
+Completed in 685ms (View: 424, DB: 6) | 200 OK [http://localhost/members]
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-09-11 17:46:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"members"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (52.6ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-12 00:46:04', "perishable_token" = 'zr9Uy67pxhHdJwbDOoG', "last_request_at" = '2010-09-12 00:46:04' WHERE "id" = 1[0m
+  [4;36;1mMember Load (0.6ms)[0m   [0;1mSELECT * FROM "members" [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mPlan Load (0.8ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 1)) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 1)) AND ("visits".member_id = 1)) [0m
+  [4;35;1mPlan Load (0.5ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 5)) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 5)) AND ("visits".member_id = 5)) [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 14)) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 14)) AND ("visits".member_id = 14)) [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 15)) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 15)) AND ("visits".member_id = 15)) [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 16)) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 16)) AND ("visits".member_id = 16)) [0m
+  [4;35;1mPlan Load (0.2ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 17)) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 17)) AND ("visits".member_id = 17)) [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 18)) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 18)) AND ("visits".member_id = 18)) [0m
+  [4;35;1mPlan Load (0.2ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 19)) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 19)) AND ("visits".member_id = 19)) [0m
+Completed in 323ms (View: 198, DB: 59) | 200 OK [http://localhost/members]
+
+
+Processing MembersController#edit (for 127.0.0.1 at 2010-09-11 17:46:09) [GET]
+  Parameters: {"action"=>"edit", "id"=>"1", "controller"=>"members"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.4ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-12 00:46:09', "perishable_token" = 'Qcueq8UpHZn094lA3jq', "last_request_at" = '2010-09-12 00:46:09' WHERE "id" = 1[0m
+  [4;35;1mMember Load (1.2ms)[0m   [0mSELECT * FROM "members" WHERE ("members"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering members/edit
+Rendered members/_avatar_loader (17.2ms)
+  [4;36;1mPlan Load (0.4ms)[0m   [0;1mSELECT * FROM "plans" [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 1)) LIMIT 1[0m
+Completed in 223ms (View: 195, DB: 3) | 200 OK [http://localhost/members/1/edit]
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-09-11 17:48:51) [GET]
+  Parameters: {"action"=>"index", "controller"=>"members"}
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;35;1mUser Update (28.5ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-09-12 00:48:51', "perishable_token" = 'Rp4bQAUJfKrVT4Fh7OzG', "last_request_at" = '2010-09-12 00:48:51' WHERE "id" = 1[0m
+  [4;36;1mMember Load (0.7ms)[0m   [0;1mSELECT * FROM "members" [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;35;1mPlan Load (0.7ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 1)) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 1)) AND ("visits".member_id = 1)) [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 5)) LIMIT 1[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 5)) AND ("visits".member_id = 5)) [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 14)) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 14)) AND ("visits".member_id = 14)) [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 15)) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 15)) AND ("visits".member_id = 15)) [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 16)) LIMIT 1[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 16)) AND ("visits".member_id = 16)) [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 17)) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 17)) AND ("visits".member_id = 17)) [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 18)) LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 18)) AND ("visits".member_id = 18)) [0m
+  [4;35;1mPlan Load (0.3ms)[0m   [0mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 19)) LIMIT 1[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 19)) AND ("visits".member_id = 19)) [0m
+Completed in 176ms (View: 110, DB: 34) | 200 OK [http://localhost/members]
+
+
+Processing MembersController#index (for 127.0.0.1 at 2010-09-11 17:53:00) [GET]
+  Parameters: {"action"=>"index", "controller"=>"members"}
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = '1') LIMIT 1[0m
+  [4;36;1mUser Update (0.7ms)[0m   [0;1mUPDATE "users" SET "updated_at" = '2010-09-12 00:53:00', "perishable_token" = 'FIEtYEmyB5PZ0WBwSWy', "last_request_at" = '2010-09-12 00:53:00' WHERE "id" = 1[0m
+  [4;35;1mMember Load (0.7ms)[0m   [0mSELECT * FROM "members" [0m
+Rendering template within layouts/application
+Rendering members/index
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 1)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 1)) AND ("visits".member_id = 1)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 5)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 5)) AND ("visits".member_id = 5)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 14)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 14)) AND ("visits".member_id = 14)) [0m
+  [4;36;1mPlan Load (0.2ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 15)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 15)) AND ("visits".member_id = 15)) [0m
+  [4;36;1mPlan Load (0.2ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 16)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 16)) AND ("visits".member_id = 16)) [0m
+  [4;36;1mPlan Load (0.2ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 17)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 17)) AND ("visits".member_id = 17)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 18)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 18)) AND ("visits".member_id = 18)) [0m
+  [4;36;1mPlan Load (0.3ms)[0m   [0;1mSELECT "plans".* FROM "plans" INNER JOIN "memberships" ON "plans".id = "memberships".plan_id WHERE (("memberships".member_id = 19)) LIMIT 1[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT count(*) AS count_all FROM "visits" WHERE ((("visits".created_at BETWEEN '2010-09-01' AND '2010-09-30') AND ("visits".member_id = 19)) AND ("visits".member_id = 19)) [0m
+Completed in 157ms (View: 96, DB: 6) | 200 OK [http://localhost/members]

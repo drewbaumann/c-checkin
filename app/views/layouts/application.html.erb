@@ -16,7 +16,7 @@
   <%= link_to 'Log In', new_user_session_path %>
   
 <% elsif current_user.admin %>
-  <%= link_to 'Home', members_path %>|
+  <%= link_to 'Members', members_path %>|
   <%= link_to 'My Account', account_path %>|
   <%= link_to 'Manage Accounts', users_path %>|
   <%= link_to 'Check In', new_visit_path %>|
