@@ -17,12 +17,13 @@
   
 <% elsif current_user.admin %>
   <%= link_to 'Members', members_path %>|
-  <%= link_to 'Manage Accounts', users_path %>|
+  <%= link_to 'Admin', users_path %>|
   <%= link_to 'Check In', new_visit_path %>|
   <%= link_to 'Members Visual', members_visual_path %>|
   <%= link_to 'Plans', plans_path %>|
   <%= link_to 'Log Out', user_session_path, :method => :delete %>
 <% else %>
+  <%= link_to 'Members Visual', members_visual_path %>|
   <%= link_to 'Log Out', user_session_path, :method => :delete %>
 <% end %>
 <%= javascript_include_tag 'jquery-1.4.2.min' %>
