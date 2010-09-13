@@ -86,19 +86,5 @@ class PlansController < ApplicationController
     end
   end
   
-  def update
-    @plan = Plan.find(params[:id])
-
-    respond_to do |format|
-      if @plan.update_attributes(params[:plan])
-        
-        format.html { redirect_to(@plan, :notice => 'Plan was successfully updated.') }
-        format.json  { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.json  { render :json => @plan.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
 
 end

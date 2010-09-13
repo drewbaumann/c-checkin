@@ -2,7 +2,7 @@ class MembersController < ApplicationController
   # GET /members
   # GET /members.json
   before_filter :require_user#, :only => :not_allowed
-  before_filter :require_admin
+  before_filter :require_admin, :only => [:index, :show, :new, :create, :edit, :create, :update, :destroy]
   
   def index
     @members = Member.all
@@ -11,6 +11,10 @@ class MembersController < ApplicationController
       format.html # index.html.erb
       format.json  { render :json => @members }
     end
+  end
+  
+  def visual
+    @members = Member.all.sort! {|a,b| a.visits.today.recent[0].short_local_time<=> b.visits.today.recent[0].short_local_time}
   end
 
   # GET /members/1
@@ -87,6 +91,7 @@ class MembersController < ApplicationController
       format.json  { head :ok }
     end
   end
+  
 
 
 private

@@ -5,7 +5,7 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Coloft Members</title>
-  <%= stylesheet_link_tag 'scaffold','membership' %>
+  <%= stylesheet_link_tag 'scaffold','membership','checkin' %>
   <%= javascript_include_tag :defaults %>
 </head>
 <body>
@@ -19,6 +19,7 @@
   <%= link_to 'Members', members_path %>|
   <%= link_to 'Manage Accounts', users_path %>|
   <%= link_to 'Check In', new_visit_path %>|
+  <%= link_to 'Members Visual', members_visual_path %>|
   <%= link_to 'Plans', plans_path %>|
   <%= link_to 'Log Out', user_session_path, :method => :delete %>
 <% else %>

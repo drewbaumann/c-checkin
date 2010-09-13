@@ -17,6 +17,10 @@ class Member < ActiveRecord::Base
     ""
   end
   
+  def firstname
+    name.split[0]
+  end
+  
   def primary_plan_id
     plans.primary.id
   rescue
