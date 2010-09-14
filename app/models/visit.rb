@@ -10,8 +10,8 @@ class Visit < ActiveRecord::Base
   named_scope :this_month, lambda{{:conditions =>['"visits".created_at BETWEEN ? AND ?',start_date,end_date]}}
   named_scope :recent, :order => "created_at DESC"
   
-  start_time_hour = DateTime.civil(Date.today.year,Date.today.month,Date.today.day,15)
-  end_time_hour = DateTime.civil(Date.today.year,Date.today.month,Date.today.day+1,1) 
+  start_time_hour = DateTime.civil(DateTime.now.utc.year,DateTime.now.utc.month,DateTime.now.day,15)
+  end_time_hour = DateTime.civil(DateTime.now.year,DateTime.now.month,DateTime.now.day+1,1) 
   
   named_scope :today, lambda{{:conditions =>['"visits".created_at BETWEEN ? AND ?',start_time_hour,end_time_hour]}}
   

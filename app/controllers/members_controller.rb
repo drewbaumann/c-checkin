@@ -14,7 +14,12 @@ class MembersController < ApplicationController
   end
   
   def visual
-    @members = Member.all.sort! {|a,b| a.visits.today.recent[0].short_local_time<=> b.visits.today.recent[0].short_local_time}
+    @members = Member.all.map! {|x| if x.visits.today!=[]; x end}
+    if @members.any? {|x| x==nil}
+      @members.delete(nil)
+    end
+    @members=@members.sort! {|a,b| a.visits.today.recent[0].local_time<=> b.visits.today.recent[0].local_time}
+    
   end
 
   # GET /members/1
