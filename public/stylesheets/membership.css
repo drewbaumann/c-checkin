@@ -2,12 +2,19 @@ img {
     vertical-align: middle;
     height: 100%;
 }
-.thumb
-{
-height: 50px;    
+
+.thumb{
+height: 50px;   
+} 
+
+.tiny{
+height: 20px;
 }
-.middle
-{
+#right{
+float: right;
+}
+
+.middle{
 height: 300px;    
 }
 #notice {

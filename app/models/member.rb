@@ -17,7 +17,7 @@ class Member < ActiveRecord::Base
     ""
   end
   
-  def firstname
+  def first_name
     name.split[0]
   end
   
