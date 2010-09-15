@@ -15,7 +15,9 @@
     <td><%=h member.name %></td>
     <td><%=h member.coloft_id %></td>
     <td><%=h member.primary_plan_name %></td>
-    <td><%=h member.visits.this_month.count %></td>
+    <% td_color = member.visits.this_month.count > member.plans[0].days ? 'red' : 'black' %>
+    <% "color:#{td_color}" %>
+    <td><p style=<%="color:#{td_color};" %>><%=h member.visits.this_month.count %></p></td>
     
     <td><%= link_to 'Show', member %></td>
     <td><%= link_to 'Edit', edit_member_path(member) %></td>

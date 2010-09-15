@@ -27569,3 +27569,40 @@ Processing UserSessionsController#new (for 127.0.0.1 at 2010-09-14 12:58:39) [GE
 Rendering template within layouts/application
 Rendering user_sessions/new
 Completed in 275ms (View: 14, DB: 0) | 200 OK [http://localhost/user_session/new]
+  [4;36;1mSQL (0.9ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateMembers (20100815220613)
+Migrating to AddAvatarsColumnToUser (20100815221906)
+Migrating to RenameTableUsers (20100815235037)
+Migrating to CreateUsers (20100816001158)
+Migrating to CreateMemberships (20100816001443)
+Migrating to DropTableUsers (20100816012919)
+Migrating to AddTableUsers (20100816013024)
+Migrating to AlterTableMembers (20100816080845)
+Migrating to CreateVisits (20100816083910)
+Migrating to AddMemberIdToVisits (20100816091136)
+Migrating to AddPriceAndDaysColumnToPlans (20100821024851)
+Migrating to AddColoftIdToVisit (20100825000749)
+Migrating to AddAdminCheckToUsers (20100911203944)
+Migrating to AddExtraDayCostToPlans (20100915033532)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (40.1ms)[0m   [0mALTER TABLE "plans" ADD "extra_day_price" integer[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100915033532')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("members")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("memberships")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_memberships_on_member_id_and_plan_id')[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("plans")[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("users")[0m
+  [4;35;1mSQL (0.0ms)[0m   [0mPRAGMA index_list("visits")[0m
